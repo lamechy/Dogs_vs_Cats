@@ -36,3 +36,16 @@ Below is a snippet of the code;
 This what the first processed random batch from the training set looked like. Note that the color appears to be distorted because we applied the VGG16 processing to data sets.It is also important to note that the dogs are represented with the `one-hot encoding` of `[0,1]` and cats represented by `[1,0]`
 ![image.png](images/img_visual.jpeg)
 
+#### Building and Training The model 
+To build the CNN, I used the Keras **Sequential** model.
+The model had 6 layers. The first layer of the model was 2-dimensional convolutional layer. It had 32 output filters each with a kernel size of `3x3`, and also used a `relu` activation function. I enabled `zero-padding` by specifying ` padding = 'same'`
+
+On the first layer only, I specified the `input_shape`, which is the shape of our data. The images are **224 pixels high** and **224 pixels wide** and have **3 color** channels: RGB. 
+
+`max pooling` layer was used to pool and reduce the data dimensionality
+
+To check out the summary of the model if you have cloned this repo, run this command
+- `model.summary()`
+
+
+
