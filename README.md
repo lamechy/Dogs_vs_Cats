@@ -47,5 +47,10 @@ On the first layer only, I specified the `input_shape`, which is the shape of ou
 To check out the summary of the model if you have cloned this repo, run this command
 - `model.summary()`
 
+#### Compiling The Model
+After building the model, I compiled it using the `Adam` optimizer with a learning rate of `0.0001`, a loss of `categorical_cross_entropy` and passed `accuracy` as my performance `metric`.
 
+Below is the code for compiling the model.
+
+- `model.compile(optimizer=Adam(learning_rate=0.0001), loss='categorical_cross_entropy', metrics=['accuracy'])`
 
