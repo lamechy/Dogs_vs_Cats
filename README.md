@@ -17,3 +17,13 @@ Before getting your hands on work consider having this pre-installation on your 
 * Have a modern web browser, preferably Chrome
 
 **NOTE: Remember to activate your Anaconda environment inside the directory you'll be working from. After activating the environment, use conda to install relevant packages that you'll need.**
+
+## Hands-on-work
+#### Image Preparation for a CNN model
+I'll walk you through the necessary Image preparation steps that I set up before training this CNN model.
+
+First I made the necessary imports. This include: Numpy, Tensorflow(embedded with Keras API), itertools,shutil, random, glob, matplotlib.pyplot and warnings modules.
+Next, I created the `train_path`, `valid_path` and`test_path` variables for which the paths to the train, valid, and test data directories were assigned. 
+
+Using the Keras' `ImageDataGenerator` class I created batches of data from the `train`, `valid` and `test` directories. The `ImageDataGenerator.floe_from_directory()` creates a `DirectoryIterator`, which generates batches of normalized tensor image data from the respective data directories.
+#### Visualizing The Data
