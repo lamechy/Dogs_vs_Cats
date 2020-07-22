@@ -40,6 +40,15 @@ This what the first processed random batch from the training set looked like. No
 To build the CNN, I used the Keras **Sequential** model.
 The model had 6 layers. The first layer of the model was 2-dimensional convolutional layer. It had 32 output filters each with a kernel size of `3x3`, and also used a `relu` activation function. I enabled `zero-padding` by specifying ` padding = 'same'`
 
+- `model = Sequential([  
+    Conv2D(filters=32, kernel_size=(3, 3), activation='relu', padding = 'same', input_shape=(224,224,3)),
+    MaxPool2D(pool_size=(2, 2), strides=2),
+    Conv2D(filters=64, kernel_size=(3, 3), activation='relu', padding = 'same'),
+    MaxPool2D(pool_size=(2, 2), strides=2),
+    Flatten(),
+    Dense(units=2, activation='softmax')
+])`
+
 On the first layer only, I specified the `input_shape`, which is the shape of our data. The images are **224 pixels high** and **224 pixels wide** and have **3 color** channels: RGB. 
 
 `max pooling` layer was used to pool and reduce the data dimensionality
